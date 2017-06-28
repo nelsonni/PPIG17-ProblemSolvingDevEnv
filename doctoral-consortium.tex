@@ -1,8 +1,9 @@
 \documentclass{ppig}
 \usepackage{epsfig}
 \usepackage{booktabs}
-\usepackage{ucs}
-\usepackage[utf8x]{inputenc}
+\usepackage{ucs} % support for using UTF-8 as input encoding in LaTeX
+\usepackage[utf8x]{inputenc} % required for UTF-8 support with ucs.sty
+\usepackage{tabularx, multirow, booktabs} % support for high-quality tables
 
 \title{Problem-Solving Applications in Developer Environments}
 
@@ -18,24 +19,49 @@
 \thispagestyle{empty}
 
 \begin{abstract}
-This file both describes and exemplifies the required format for papers submitted to PPIG 2016. Please review this file even if you have submitted to PPIG before as some formatting details have changed relative to previous years.
+Programming is inherently a problem-solving exercise: A programmer has to create an understanding of the situation, externalize and contextualize thoughts and ideas, develop strategies on how to proceed with the task, enact changes according to the most appropriate strategy, and reflect to learn from each problem.
+Therefore, programming is clearly more than just code input, testing, and maintenance.
+However, modern development environments largely focus on the ``writing code'' parts of programming.
+To support all aspects of problem-solving in programming, I propose a new Integrated Development Environment (IDE) which uses a dynamic, expressive, and human-centric cards and canvas paradigm.
 \end{abstract}
 
 \section{Introduction}
-Integrated Development Environments (IDEs), such as Eclipse and Visual Studio, consolidate developer toolsets into a single environment.
-These environments strive for consistency in behavior and presentation, by adopting UI that accommodate different types of actions and behaviors and presenting.
-The traditional UI for modern IDEs has centered around a bento-box style in which there is a lattice of different panes stretching across a single window.
-The rationale for this design is one of practicality; maximizing the use of screen space to allow developers visibility into their code.
-However, this rationale and accompanying UIs have led to a code-centric design that crowds out other important tasks that developers use when developing code.
+Modern Integrated Development Environments (IDEs), such as Eclipse and Visual Studio, rely upon a fairly uniform interface of panes and windows to represent contextual portions of code and development lifecycle tasks.
+However, recent shifts toward distributed, service-oriented, and highly parallel software development have seen IDEs struggle to coup with the needs of developers.
+These developers have increasingly demanded tools that provide realtime feedback which integrates with both collaborators and customers that are increasingly embedded within the development model.
 
-- Introduce Programming as Problem-Solving and make citations to psych/CS literature regarding this phenomenon.
+The crunch for adding features that accommodate these interconnected development models has forced several IDE developers to rethink the core architecture of their environments.
+I believe that an entire reimagining is necessary to develop tools and environments that accomplish more of what developers are seeking: code solutions to logic-oriented problems.
 
 \section{Preliminary Work}
-- Discuss current works regarding IDE UI in light of Programming as Problem-Solving.
-- Brief description of PPIG'17 short paper. Possible references to ICSME'17 and/or FSE'17 work?
+Our preliminary work aimed to examine the psychological underpinnings of problem-solving in programming.
+When viewed as a problem-solving activity, programming begins to illustrate more activities and actions beyond the act of writing and manipulating code.
+Through a review of prior literature (cite, cite, cite), we have found six activity categories and an initial set of 22 actions that fit within those categories which represent the gamut of problem-solving in programming.
+These activities and actions are illustrated in Table~\ref{pps_matrix}.
+
+\input{table_pps} % Programming as Problem-Solving Matrix
+
+Based upon this model of programming as problem-solving, we further identified six challenges that must be addressed in the design of a new IDE that natively supports problem-solving.
+Those challenges can be summarized as follows:
+\textit{\begin{itemize}
+  \item How to support programmers' formulation of problems and reflection on potential solutions?
+  \item How to provide programmers access to the relevant context in a problem space?
+  \item How to support different information processing styles and workflows of programmers?
+  \item How to support programmers in relying on past experience?
+  \item How to enable collaboration between programmers across all artifacts involved in problem solving?
+  \item How to utilize pieces of information and context to support the act of coding?
+\end{itemize}}
+
+As an initial attempt to address these challenges, we proposed a IDE which harnesses a cards-based UI to provide functionality that strikes at the heart of problem-solving in programming.
 
 \section{Research Approach}
+Our preliminary work will be utilized as the foundation for our IDE explained in section~\ref{ide_design}
+
 Conducting user studies regarding interactions with modal cards-based IDE interfaces, in order to develop a feedback loop that continues to improve the tool as well as match it's capabilities to the problem-solving actions that programmers care about.
+
+\subsection{UI for Problem-solving IDEs}\label{ide_design}
+
+\subsection{adsf}
 
 \section{Contributions}
 Extension of previous work on Code Bubbles, Variolite, PatchWorks, and others. However, these works focused primarily on innovations in usage (interaction models for debugging in the case of Code Bubbles) or on particular tasks (code patch comparisons and navigational affordances in the case of PatchWorks, and exploratory coding in the case of Variolite).
